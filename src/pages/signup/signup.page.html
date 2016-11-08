@@ -1,0 +1,39 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>注册</ion-title>
+    </ion-navbar>
+</ion-header>
+
+<ion-content>
+    <ion-list>
+        <form #regeistForm="ngForm" novalidate>
+            <ion-item>
+                <ion-label floating color="primary">手机号</ion-label>
+                <ion-input [(ngModel)]="mobile" name="mobile" type="text" #mobi="ngModel"
+                           spellcheck="false" autocapitalize="off" required></ion-input>
+            </ion-item>
+            <p [hidden]="mobi.valid || submitted==false " color="danger" padding-left>
+                Username is required
+            </p>
+            <ion-item>
+                <ion-label floating color="primary">密码</ion-label>
+                <ion-input [(ngModel)]="password" name="password" type="password" #pwd="ngModel"
+                           spellcheck="false" autocapitalize="off" required></ion-input>
+            </ion-item>
+            <p [hidden]="pwd.valid || submitted == false" color="danger" padding-left>
+                Password is required
+            </p>
+
+            <ion-row responsive-sm>
+                <ion-col>
+                    <button ion-button (click)="onSignup(regeistForm)" type="submit" color="primary" block>注册</button>
+                </ion-col>
+            </ion-row>
+        </form>
+
+    </ion-list>
+
+</ion-content>

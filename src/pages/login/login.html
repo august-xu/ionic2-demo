@@ -1,0 +1,48 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>登陆</ion-title>
+    </ion-navbar>
+</ion-header>
+
+
+<ion-content>
+    <ion-list>
+
+        <div class="logo">
+            <img src="assets/img/appicon.svg">
+        </div>
+
+        <form #loginForm="ngForm" novalidate>
+            <ion-item>
+                <ion-label floating color="primary">用户名:</ion-label>
+                <ion-input id="username" [(ngModel)]="login.username" name="username" type="text" #username="ngModel"
+                           spellcheck="false" autocapitalize="off" required></ion-input>
+            </ion-item>
+            <p [hidden]="username.valid || submitted==false " color="danger" padding-left>
+                Username is required
+            </p>
+            <ion-item>
+                <ion-label floating color="primary">密码:</ion-label>
+                <ion-input id="password" [(ngModel)]="login.password" name="password" type="password" #password="ngModel"
+                           spellcheck="false" autocapitalize="off" required></ion-input>
+            </ion-item>
+            <p [hidden]="password.valid || submitted == false" color="danger" padding-left>
+                Password is required
+            </p>
+
+            <ion-row responsive-sm>
+                <ion-col>
+                    <button ion-button (click)="onLogin(loginForm)" type="submit" color="primary" block>登陆</button>
+                </ion-col>
+                <ion-col>
+                    <button ion-button (click)="onSignup()" type="button" color="light" block>注册</button>
+                </ion-col>
+            </ion-row>
+        </form>
+
+    </ion-list>
+
+</ion-content>

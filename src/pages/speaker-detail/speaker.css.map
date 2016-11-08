@@ -1,0 +1,7 @@
+{
+"version": 3,
+"mappings": "AAAA,mBAAoB;EAClB,SAAS,EAAE,KAAK;EAChB,aAAa,EAAE,GAAG;;AAGpB,iBAAkB;EAChB,KAAK,EAAE,OAAO",
+"sources": ["speaker.scss"],
+"names": [],
+"file": "speaker.css"
+}

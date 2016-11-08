@@ -1,0 +1,52 @@
+<ion-header>
+    <ion-navbar>
+        <button ion-button menuToggle>
+            <ion-icon name="menu"></ion-icon>
+        </button>
+        <ion-title>
+            演讲人
+        </ion-title>
+    </ion-navbar>
+</ion-header>
+<ion-content>
+    <ion-card *ngFor="let speak of speakers">
+        <ion-card-header>
+            <ion-item>
+                <ion-avatar item-left>
+                    <img [src]="speak.profilePic">
+                </ion-avatar>
+                {{speak.name}}
+                <button ion-button icon-only (click)="openContact(speak)" clear item-right>
+                    <ion-icon name="help-circle"></ion-icon>
+                </button>
+            </ion-item>
+
+        </ion-card-header>
+
+        <ion-card-content>
+            <ion-list>
+                <button ion-item *ngFor="let session of speak.sessions" (click)="goToSessionDetail(session)">
+                    <h3>{{session.name}}</h3>
+                </button>
+                <button ion-item (click)="goToSpeakerDetail(speak)">
+                    <h3>About {{speak.name}}</h3>
+                </button>
+            </ion-list>
+        </ion-card-content>
+
+        <ion-item>
+            <button ion-button icon-left (click)="goToSpeakerTwitter(speak)" clear item-left>
+                <ion-icon name="logo-twitter"></ion-icon>
+                Tweet
+            </button>
+            <button ion-button icon-left (click)="openSpeakerShare(speak)" clear item-right>
+                <ion-icon name="share"></ion-icon>
+                Share
+            </button>
+        </ion-item>
+        
+
+    </ion-card>
+
+
+</ion-content>
